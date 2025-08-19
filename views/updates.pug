@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet", href="/public/css/style.css")
+  body
+    h1 Add a Game
+    p: a(href="/") Return to the homepage
+
+    //- yahan ke `name`, `publisher`, `price` aapke property INTERNAL names hone chahiye
+    form(action="/update-cobj" method="POST")
+      div
+        label(for="name") Name
+        input#name(type="text" name="name" required)
+      div
+        label(for="publisher") Publisher
+        input#publisher(type="text" name="publisher" required)
+      div
+        label(for="price") Price
+        input#price(type="number" name="price" step="1" required)
+      div
+        button(type="submit") Save
